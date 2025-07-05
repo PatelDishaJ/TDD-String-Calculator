@@ -128,13 +128,13 @@ test('return sum of two numbers with cutom delimiter ****',()=>{
 
 //Test for negative numbers
 test('throw an exception for single negative number',()=>{
-    expect(add(-1,2)).toBe("negative numbers not allowed -1");
+    expect(()=>add("-1,2")).toThrow("negative numbers not allowed -1");
 });
 
 test('throw an exception for two negative numbers',()=>{
-    expect(add(-1,2,-5)).toBe("negative numbers not allowed -1,-5");
+    expect(()=>add("-1,2,-5")).toThrow("negative numbers not allowed -1,-5");
 });
 
 test('throw an exception for multiple negative numbers',()=>{
-    expect(add(1,-2,3,-4,-7)).toBe("negative numbers not allowed -2,-4,-7");
+    expect(()=>add("1,-2,3,-4,-7")).toThrow("negative numbers not allowed -2,-4,-7");
 });
