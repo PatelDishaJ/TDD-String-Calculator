@@ -162,3 +162,16 @@ test('throw an exception for multiple negative numbers with custom delimiters ;'
 test('throw an exception for multiple negative numbers with newline,commas between them',()=>{
     expect(()=>add("1\n-2\n3,-4,,-7")).toThrow("negative numbers not allowed -2,-4,-7");
 });
+
+//Extra Test cases
+describe("Edge case and malformed input handling", () => {
+
+    test('throws error if custom delimiter format is broken', () => {
+        expect(() => add("//\n1;2")).toThrow("Invalid custom delimiter definition");
+    });
+    
+    test('throws error if numbers does not follow formate of custom delimiter', () => {
+        expect(() => add("1;2")).toThrow("Unexpected delimiter"); 
+    });
+
+});
