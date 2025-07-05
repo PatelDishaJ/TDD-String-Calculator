@@ -47,10 +47,23 @@ test('return number itself for single number with comma and space after',()=>{
 });
 
 //Test for two number
-test('return sum of two number',()=>{
+test('return sum of two numbers',()=>{
     expect(add("1,2")).toBe(3);
 });
 
-test('return sum of two large numer',()=>{
+test('return sum of two large numers',()=>{
     expect(add("100000000,199999999")).toBe(299999999);
+});
+
+//Test for multiple number
+test('return sum of three numbers',()=>{
+    expect(add("1,2,3")).toBe(6);
+});
+
+test('return sum of four numbers',()=>{
+    expect(add("10,20,30,40")).toBe(100);
+});
+
+test('return sum of seven numbers',()=>{
+    expect(add("10,200,3000,40000,500000,6000000,70000000")).toBe(76543210);
 });
