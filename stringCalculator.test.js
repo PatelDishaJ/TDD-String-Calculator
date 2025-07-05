@@ -13,6 +13,14 @@ test('returns 0 for newline only',()=>{
     expect(add("\n")).toBe(0);
 });
 
+test('returns 0 for comma only',()=>{
+    expect(add(",")).toBe(0);
+});
+
+test('returns 0 for custom delimiter only',()=>{
+    expect(add("//;\n")).toBe(0);
+});
+
 //Test for single number
 test('return number itself for single number',()=>{
     expect(add("5")).toBe(5);
