@@ -63,7 +63,7 @@ test('return sum of two numbers with mutliple commas between',()=>{
     expect(add("1,,,2")).toBe(3);
 });
 
-//Test for multiple number
+//Test for multiple numbers
 test('return sum of three numbers',()=>{
     expect(add("1,2,3")).toBe(6);
 });
@@ -78,4 +78,21 @@ test('return sum of seven numbers',()=>{
 
 test('return sum of multiple numbers with extra commas',()=>{
     expect(add("10,200,3000,40000,,500000,6000000,,,70000000")).toBe(76543210);
+});
+
+//Test for multiple numbers with newlines between them
+test('return sum of two numbers with newline between them',()=>{
+    expect(add("1\n2")).toBe(3);
+});
+
+test('return sum of three numbers with newline between them',()=>{
+    expect(add("1\n2,3")).toBe(6);
+});
+
+test('return sum of five numbers with newline between them',()=>{
+    expect(add("45\n27\n78\n456\n35")).toBe(641);
+});
+
+test('return sum of multiple numbers with newline,commas between them',()=>{
+    expect(add("10\n200,3000\n40000\n500000,6000000,,,70000000")).toBe(76543210);
 });
