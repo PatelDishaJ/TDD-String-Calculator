@@ -44,5 +44,5 @@ test('return sum of two number',()=>{
 });
 
 test('return sum of two large numer',()=>{
-    expect(add("10000000,199999999")).toBe(299999999);
+    expect(add("100000000,199999999")).toBe(299999999);
 });
