@@ -138,3 +138,11 @@ test('throw an exception for two negative numbers',()=>{
 test('throw an exception for multiple negative numbers',()=>{
     expect(()=>add("1,-2,3,-4,-7")).toThrow("negative numbers not allowed -2,-4,-7");
 });
+
+test('throw an exception for multiple negative numbers with custom delimiters ;',()=>{
+    expect(()=>add("//;\n1;-2;3;-4;-7")).toThrow("negative numbers not allowed -2,-4,-7");
+});
+
+test('throw an exception for multiple negative numbers with newline,commas between them',()=>{
+    expect(()=>add("1\n-2\n3,-4,,-7")).toThrow("negative numbers not allowed -2,-4,-7");
+});
