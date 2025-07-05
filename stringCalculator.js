@@ -9,7 +9,7 @@ function add(numbers){
     //check for custom delimiter
     if(numbers.startsWith("//"))
     {
-        const [customDel,...numbers]=numbers.split("\n");
+        const [customDel,...rest]=numbers.split("\n");
         customDelimiter=customDel.slice(2);
 
         if (!customDelimiter) {
@@ -18,7 +18,7 @@ function add(numbers){
         //Replaces any RegExp-special character with an escaped version so it matches literally.
         const escapedDelimiter = customDelimiter.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
         delimiter = new RegExp(escapedDelimiter);
-        numbers=numbers.join("\n");
+        numbers=rest.join("\n");
     }
 
     //parse number parts
