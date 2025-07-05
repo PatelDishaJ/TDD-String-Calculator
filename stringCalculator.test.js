@@ -17,13 +17,6 @@ test('returns 0 for comma only',()=>{
     expect(add(",")).toBe(0);
 });
 
-test('returns 0 for custom delimiter only',()=>{
-    expect(add("//;\n")).toBe(0);
-});
-
-test('returns 0 for custom delimiter only',()=>{
-    expect(add("//\n")).toBe(0);
-});
 
 //Test for single number
 test('return number itself for single number',()=>{
@@ -142,6 +135,7 @@ test('return sum of two numbers with duplicate cutom delimiter $',()=>{
     expect(add("//$\n1$$$2")).toBe(3);
 });
 
+
 //Test for negative numbers
 test('throw an exception for single negative number',()=>{
     expect(()=>add("-1,2")).toThrow("negative numbers not allowed -1");
@@ -172,6 +166,10 @@ describe("Edge case and malformed input handling", () => {
     
     test('throws error if numbers does not follow formate of custom delimiter', () => {
         expect(() => add("1;2")).toThrow("Unexpected delimiter"); 
+    });
+
+    test('throws error if custom delimiter is not defined after //', () => { 
+        expect(() => add("//\n")).toThrow("Invalid custom delimiter definition");
     });
 
 });
