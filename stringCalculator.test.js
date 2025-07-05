@@ -21,6 +21,10 @@ test('returns 0 for custom delimiter only',()=>{
     expect(add("//;\n")).toBe(0);
 });
 
+test('returns 0 for custom delimiter only',()=>{
+    expect(add("//\n")).toBe(0);
+});
+
 //Test for single number
 test('return number itself for single number',()=>{
     expect(add("5")).toBe(5);
@@ -132,6 +136,10 @@ test('return sum of two numbers with cutom delimiter [.]',()=>{
 
 test('return sum of two numbers with cutom delimiter ****',()=>{
     expect(add("//****\n1****2")).toBe(3);
+});
+
+test('return sum of two numbers with duplicate cutom delimiter $',()=>{
+    expect(add("//$\n1$$$2")).toBe(3);
 });
 
 //Test for negative numbers
