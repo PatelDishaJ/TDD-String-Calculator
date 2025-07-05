@@ -14,28 +14,36 @@ test('returns 0 for newline only',()=>{
 });
 
 //Test for single number
-test('return number itself for single input',()=>{
+test('return number itself for single number',()=>{
     expect(add("5")).toBe(5);
 });
 
-test('return number itself for single input with trailing space',()=>{
+test('return number itself for single number with trailing space',()=>{
     expect(add("5 ")).toBe(5);
 });
 
-test('return number itself for single input with leading space',()=>{
+test('return number itself for single number with leading space',()=>{
     expect(add(" 5")).toBe(5);
 });
 
-test('return number itself for single input with trailing and leading space',()=>{
+test('return number itself for single number with trailing and leading space',()=>{
     expect(add(" 5 ")).toBe(5);
 });
 
-test('return number itself for input with newline before', () => {
+test('return number itself for single number with newline before', () => {
   expect(add("\n5")).toBe(5);
 });
 
-test('return number itself for input with newline after', () => {
+test('return number itself for single number with newline after', () => {
   expect(add("5\n")).toBe(5);
+});
+
+test('return number itself for single number with comma after',()=>{
+    expect(add("5,")).toBe(5);
+});
+
+test('return number itself for single number with comma and space after',()=>{
+    expect(add("5, ")).toBe(5);
 });
 
 //Test for two number
