@@ -1,7 +1,8 @@
 function add(numbers){
-    if(numbers.trim()==="") // Handles "", "   ", "\n"
+    numbers=numbers.trim();// Handles "", "   ", "\n"
+    if(numbers==="") 
         return 0;
-    return NaN;
+    return parseInt(numbers);
 }
 
 module.exports = {add};
