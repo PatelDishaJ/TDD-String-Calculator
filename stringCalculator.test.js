@@ -37,3 +37,12 @@ test('return number itself for input with newline before', () => {
 test('return number itself for input with newline after', () => {
   expect(add("5\n")).toBe(5);
 });
+
+//Test for two number
+test('return sum of two number',()=>{
+    expect(add("1,2")).toBe(3);
+});
+
+test('return sum of two large numer',()=>{
+    expect(add("10000000,199999999")).toBe(299999999);
+});
