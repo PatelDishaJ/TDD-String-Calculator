@@ -96,3 +96,16 @@ test('return sum of five numbers with newline between them',()=>{
 test('return sum of multiple numbers with newline,commas between them',()=>{
     expect(add("10\n200,3000\n40000\n500000,6000000,,,70000000")).toBe(76543210);
 });
+
+//Test for custom delimiter 
+test('return sum of two numbers with cutom delimiter ;',()=>{
+    expect(add("//;\n1;2")).toBe(3);
+});
+
+test('return sum of two numbers with cutom delimiter .',()=>{
+    expect(add("//.\n1.2")).toBe(3);
+});
+
+test('return sum of two numbers with cutom delimiter $',()=>{
+    expect(add("//$\n1$2")).toBe(3);
+});
