@@ -110,18 +110,18 @@ test('return sum of two numbers with cutom delimiter $',()=>{
     expect(add("//$\n1$2")).toBe(3);
 });
 
-test('return sum of two numbers with cutom delimiter $',()=>{
+test('return sum of two numbers with cutom delimiter @',()=>{
     expect(add("//@\n1@2")).toBe(3);
 });
 
-test('return sum of two numbers with cutom delimiter $',()=>{
-    expect(add("/#-#\n1#-#2")).toBe(3);
+test('return sum of two numbers with cutom delimiter #-#',()=>{
+    expect(add("//#-#\n1#-#2")).toBe(3);
 });
 
-test('return sum of two numbers with cutom delimiter .',()=>{
+test('return sum of two numbers with cutom delimiter [.]',()=>{
     expect(add("//[.]\n1[.]2")).toBe(3);
 });
 
-test('return sum of two numbers with cutom delimiter $',()=>{
+test('return sum of two numbers with cutom delimiter ****',()=>{
     expect(add("//****\n1****2")).toBe(3);
 });
