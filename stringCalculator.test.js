@@ -55,6 +55,14 @@ test('return sum of two large numers',()=>{
     expect(add("100000000,199999999")).toBe(299999999);
 });
 
+test('return sum of two numbers with comma after',()=>{
+    expect(add("1,2,")).toBe(3);
+});
+
+test('return sum of two numbers with mutliple commas between',()=>{
+    expect(add("1,,,2")).toBe(3);
+});
+
 //Test for multiple number
 test('return sum of three numbers',()=>{
     expect(add("1,2,3")).toBe(6);
@@ -66,4 +74,8 @@ test('return sum of four numbers',()=>{
 
 test('return sum of seven numbers',()=>{
     expect(add("10,200,3000,40000,500000,6000000,70000000")).toBe(76543210);
+});
+
+test('return sum of multiple numbers with extra commas',()=>{
+    expect(add("10,200,3000,40000,,500000,6000000,,,70000000")).toBe(76543210);
 });
